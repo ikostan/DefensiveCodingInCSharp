@@ -19,16 +19,20 @@ namespace ACM.Win
         }
 
         private void PlaceOrder()
-        {
+        {        
             // Populate the customer instance
             var customer = new Customer();
 
-            // Add/Save a new customer
-            var customerRepository = new CustomerRepository();
-            customerRepository.Add(customer);
-
             // Populate the order instance
             var order = new Order();
+
+            // Populate the payment info from the UI
+            var payment = new Payment();
+
+            /*
+            // Add/Save a new customer
+            var customerRepository = new CustomerRepository();
+            customerRepository.Add(customer);       
 
             // Save/Add a new Order
             OrderRepository orderRepository = new OrderRepository();
@@ -39,8 +43,6 @@ namespace ACM.Win
             bool allowSplitOrders = false;
             inventoryRepository.OrderItems(order, allowSplitOrders);
 
-            // Populate the payment info from the UI
-            var payment = new Payment();
             payment.ProcessPayment(payment); // Process payment
 
             var emailReceipt = true;
@@ -55,11 +57,12 @@ namespace ACM.Win
                 var emailLibrary = new EmailLibrary();
                 emailLibrary.SendEmail(customer.EmailAddress, "Here is your receipt");
             }
+            */
 
-            //var orderController = new OrderController();
-            //orderController.PlaceOrder(customer, order, payment, 
-            //    allowSplitOrders:false, 
-            //    emailReceipt:true);
+            var orderController = new OrderController();
+            orderController.PlaceOrder(customer, order, payment,
+                allowSplitOrders: false,
+                emailReceipt: true);
         }
 
     }
