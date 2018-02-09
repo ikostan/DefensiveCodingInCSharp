@@ -8,5 +8,6 @@ namespace ACM.BL
 {
     class Inventory
     {
+        //TODO: implement Inventory class
     }
 }

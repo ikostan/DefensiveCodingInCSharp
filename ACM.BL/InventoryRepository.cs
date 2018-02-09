@@ -10,7 +10,7 @@ namespace ACM.BL
     {
         public void OrderItems(Order order, bool allowSplitOrders)
         {
-            // -- Order the items from inventory --
+            //TODO: -- Order the items from inventory --
             // For each item ordered,
             // Locate the item in inventory.
             // If no longer available, notify the user.

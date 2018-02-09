@@ -1,0 +1,9 @@
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.BL\bin\Debug\ACM.BL.xml
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.BL\bin\Debug\ACM.BL.dll
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.BL\bin\Debug\ACM.BL.pdb
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.BL\bin\Debug\ACM.Library.dll
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.BL\bin\Debug\ACM.Library.pdb
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.BL\obj\Debug\ACM.BL.csprojResolveAssemblyReference.cache
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.BL\obj\Debug\ACM.BL.csproj.CoreCompileInputs.cache
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.BL\obj\Debug\ACM.BL.dll
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.BL\obj\Debug\ACM.BL.pdb
