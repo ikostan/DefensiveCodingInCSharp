@@ -1,5 +1,4 @@
 ﻿using ACM.BL;
-using Core.Common;
 using System;
 using System.Windows.Forms;
 
@@ -13,11 +12,19 @@ namespace ACM.Win
             InitializeComponent();
         }
        
+        /// <summary>
+        /// Button click event handler
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             PlaceOrder();
         }
 
+        /// <summary>
+        /// Place a new order
+        /// </summary>
         private void PlaceOrder()
         {        
             // Populate the customer instance
@@ -28,6 +35,10 @@ namespace ACM.Win
 
             // Populate the payment info from the UI
             var payment = new Payment();
+
+            // These flags suppose to come from the UI
+            var emailReceipt = true;
+            bool allowSplitOrders = false;
 
             /*
             // Add/Save a new customer
@@ -40,12 +51,9 @@ namespace ACM.Win
 
             // Proceess an order
             InventoryRepository inventoryRepository = new InventoryRepository();
-            bool allowSplitOrders = false;
             inventoryRepository.OrderItems(order, allowSplitOrders);
 
             payment.ProcessPayment(payment); // Process payment
-
-            var emailReceipt = true;
 
             // Reciept processing (send via email)
             if (emailReceipt)
@@ -60,9 +68,11 @@ namespace ACM.Win
             */
 
             var orderController = new OrderController();
-            orderController.PlaceOrder(customer, order, payment,
-                allowSplitOrders: false,
-                emailReceipt: true);
+            orderController.PlaceOrder(customer, 
+                                        order, 
+                                        payment,
+                                        allowSplitOrders: allowSplitOrders,
+                                        emailReceipt: emailReceipt);
         }
 
     }
