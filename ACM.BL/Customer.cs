@@ -28,6 +28,11 @@ namespace ACM.BL
             // If not,
             // request an email address from the user.
         }
+
+        public object CalculatePercentOfGoalSteps(string goal, string actual)
+        {
+            return (Convert.ToDecimal(actual) / Convert.ToDecimal(goal)) * 100;
+        }
     }
 }
 

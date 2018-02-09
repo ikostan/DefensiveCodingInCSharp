@@ -71,9 +71,8 @@ namespace ACM.Win
             orderController.PlaceOrder(customer, 
                                         order, 
                                         payment,
-                                        allowSplitOrders: allowSplitOrders,
-                                        emailReceipt: emailReceipt);
+                                        allowSplitOrders,
+                                        emailReceipt);
         }
-
     }
 }
