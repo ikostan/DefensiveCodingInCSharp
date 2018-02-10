@@ -40,33 +40,6 @@ namespace ACM.Win
             var emailReceipt = true;
             bool allowSplitOrders = false;
 
-            /*
-            // Add/Save a new customer
-            var customerRepository = new CustomerRepository();
-            customerRepository.Add(customer);       
-
-            // Save/Add a new Order
-            OrderRepository orderRepository = new OrderRepository();
-            orderRepository.Add(order);
-
-            // Proceess an order
-            InventoryRepository inventoryRepository = new InventoryRepository();
-            inventoryRepository.OrderItems(order, allowSplitOrders);
-
-            payment.ProcessPayment(payment); // Process payment
-
-            // Reciept processing (send via email)
-            if (emailReceipt)
-            {
-                customer.ValidateEmail(); //Validate email
-                customerRepository.Update(); //?
-
-                //Send an email
-                var emailLibrary = new EmailLibrary();
-                emailLibrary.SendEmail(customer.EmailAddress, "Here is your receipt");
-            }
-            */
-
             var orderController = new OrderController();
             orderController.PlaceOrder(customer, 
                                         order, 

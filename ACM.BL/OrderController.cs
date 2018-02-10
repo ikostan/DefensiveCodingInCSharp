@@ -25,7 +25,8 @@ namespace ACM.BL
         public void PlaceOrder(Customer customer, 
                                 Order order, 
                                 Payment payment, 
-                                bool allowSplitOrders, bool emailReceipt)
+                                bool allowSplitOrders, 
+                                bool emailReceipt)
         {
             customerRepository.Add(customer);
 
@@ -37,11 +38,19 @@ namespace ACM.BL
 
             if (emailReceipt)
             {
-                customer.ValidateEmail();
-                customerRepository.Update();
+                //string message;
+                var isValidEmail = customer.ValidateEmail();
 
-                emailLibrary.SendEmail(customer.EmailAddress,
-                                        "Here is your receipt");
+                if (isValidEmail.Success)
+                {
+                    customerRepository.Update();
+                    emailLibrary.SendEmail(customer.EmailAddress,
+                                            "Here is your receipt");
+                }
+                else
+                {
+                    System.Diagnostics.Debug.WriteLine(isValidEmail.MessageList[0]);    
+                }
             }
         }
     }
