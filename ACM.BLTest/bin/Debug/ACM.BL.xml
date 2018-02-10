@@ -32,9 +32,19 @@
             Repository for orders
             </summary>
         </member>
+        <member name="T:ACM.BL.PaymentType">
+            <summary>
+            Type of payments accepted by the system
+            </summary>
+        </member>
         <member name="T:ACM.BL.Payment">
             <summary>
             Manages a payment.
+            </summary>
+        </member>
+        <member name="M:ACM.BL.Payment.ProcessPayment">
+            <summary>
+            Process a payment for an order
             </summary>
         </member>
     </members>

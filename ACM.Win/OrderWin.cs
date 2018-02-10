@@ -35,17 +35,30 @@ namespace ACM.Win
 
             // Populate the payment info from the UI
             var payment = new Payment();
+            //payment.PaymentType = 1;
 
             // These flags suppose to come from the UI
             var emailReceipt = true;
             bool allowSplitOrders = false;
 
             var orderController = new OrderController();
-            orderController.PlaceOrder(customer, 
-                                        order, 
-                                        payment,
-                                        allowSplitOrders,
-                                        emailReceipt);
+
+            try
+            {
+                orderController.PlaceOrder(customer,
+                                       order,
+                                       payment,
+                                       allowSplitOrders,
+                                       emailReceipt);
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("An error occured:\n" + ex.Message, 
+                                "Error", 
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Error);
+                //throw;
+            }          
         }
     }
 }

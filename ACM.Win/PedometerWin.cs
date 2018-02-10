@@ -21,9 +21,24 @@ namespace ACM.Win
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
             var customer = new Customer();
-            var result = customer.CalculatePercentOfGoalSteps(this.textStepsGoal.Text, 
-                                                                this.textStepsToday.Text);
-            labelResult.Text = "You have reached " + result + "% of your goal!";
+
+            try
+            {
+                var result = customer.CalculatePercentOfGoalSteps(this.textStepsGoal.Text, this.textStepsToday.Text);
+
+                labelResult.Text = "You have reached " + result + "% of your goal!";
+
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Error accured:\n" + ex.Message, 
+                                "Error", 
+                                MessageBoxButtons.OK, 
+                                MessageBoxIcon.Error);
+
+                labelResult.Text = string.Empty;
+                //throw;
+            }
         }
     }
 }

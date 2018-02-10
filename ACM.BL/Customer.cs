@@ -79,28 +79,36 @@ namespace ACM.BL
         /// <param name="goalSteps"></param>
         /// <param name="actualSteps"></param>
         /// <returns></returns>
-        public object CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)
+        public object CalculatePercentOfGoalSteps(string goalSteps, 
+                                                    string actualSteps)
         {
-            if (string.IsNullOrWhiteSpace(goalSteps)) { throw new ArgumentException("Goal must be entered!", "goalSteps"); }
+            if (string.IsNullOrWhiteSpace(goalSteps))
+            { throw new ArgumentException("Goal must be entered!", "goalSteps"); }
 
-            if (string.IsNullOrWhiteSpace(actualSteps)) { throw new ArgumentException("Actual steps must be entered!", "actualSteps"); }
+            if (string.IsNullOrWhiteSpace(actualSteps))
+            { throw new ArgumentException("Actual steps must be entered!", "actualSteps"); }
 
             decimal goalStepsCount = 0;
-            if (!decimal.TryParse(goalSteps, out goalStepsCount)) { throw new ArgumentException("Goal must be numeric"); }
+            if (!decimal.TryParse(goalSteps, out goalStepsCount))
+            { throw new ArgumentException("Goal must be numeric"); }
 
             decimal actualStepsCount = 0;
-            if (!decimal.TryParse(actualSteps, out actualStepsCount)) { throw new ArgumentException("Actual steps must be numeric", "actualSteps"); }
+            if (!decimal.TryParse(actualSteps, out actualStepsCount))
+            { throw new ArgumentException("Actual steps must be numeric", "actualSteps"); }
 
-            if (goalStepsCount <= 0) { throw new ArgumentException("Goal must be greater than zero", "goalSteps"); }
+            if (goalStepsCount <= 0)
+            { throw new ArgumentException("Goal must be greater than zero", "goalSteps"); }
 
             //return (actualStepsCount / goalStepsCount) * 100;
 
             return CalculatePercentOfGoalSteps(goalStepsCount, actualStepsCount);
         }
 
-        public object CalculatePercentOfGoalSteps(decimal goalSteps, decimal actualSteps)
+        public object CalculatePercentOfGoalSteps(decimal goalSteps, 
+                                                    decimal actualSteps)
         {
-            if (goalSteps <= 0) { throw new ArgumentException("Goal must be greater than zero", "goalSteps"); }
+            if (goalSteps <= 0)
+            { throw new ArgumentException("Goal must be greater than zero", "goalSteps"); }
 
             return Math.Round((actualSteps / goalSteps) * 100, 2);
         }

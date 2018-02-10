@@ -58,7 +58,7 @@ namespace ACM.BL
             customerRepository.Add(customer);           
             orderRepository.Add(order);
             inventoryRepository.OrderItems(order, allowSplitOrders);        
-            payment.ProcessPayment(payment);
+            payment.ProcessPayment();
 
             if (emailReceipt)
             {
