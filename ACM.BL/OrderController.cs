@@ -1,6 +1,8 @@
-﻿using Core.Common;
+﻿using ACM.Library;
+using Core.Common;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,24 +24,47 @@ namespace ACM.BL
             emailLibrary = new EmailLibrary();
         }
 
-        public void PlaceOrder(Customer customer, 
+        public OperationResult PlaceOrder(Customer customer, 
                                 Order order, 
                                 Payment payment, 
                                 bool allowSplitOrders, 
                                 bool emailReceipt)
         {
-            customerRepository.Add(customer);
+            //Assertions of the INVARIANTS
+            Debug.Assert(customerRepository !=null, "CustomerRepository is null");
+            Debug.Assert(orderRepository != null, "OrderRepository is null");
+            Debug.Assert(inventoryRepository != null, "InventoryRepository is null");
+            Debug.Assert(emailLibrary != null, "EmailLibrary is null");
 
+
+            if (customer == null)
+            {
+                throw new ArgumentNullException("Customer istance is null");
+            }
+
+            if (order == null)
+            {
+                throw new ArgumentNullException("Order istance is null");
+            }
+
+            if (payment == null)
+            {
+                throw new ArgumentNullException("Payment istance is null");
+            }
+
+            var operationResult = new OperationResult();
+
+            //Those are INVARIANTS
+            customerRepository.Add(customer);           
             orderRepository.Add(order);
-
-            inventoryRepository.OrderItems(order, allowSplitOrders);
-
+            inventoryRepository.OrderItems(order, allowSplitOrders);        
             payment.ProcessPayment(payment);
 
             if (emailReceipt)
             {
                 //string message;
                 var isValidEmail = customer.ValidateEmail();
+                //operationResult.Success = isValidEmail.Success;
 
                 if (isValidEmail.Success)
                 {
@@ -49,9 +74,15 @@ namespace ACM.BL
                 }
                 else
                 {
-                    System.Diagnostics.Debug.WriteLine(isValidEmail.MessageList[0]);    
+                    if (isValidEmail.MessageList.Any())
+                    {
+                        operationResult.MessageList.Add(isValidEmail.MessageList[0]);
+                        System.Diagnostics.Debug.WriteLine(isValidEmail.MessageList[0]);
+                    }
                 }
             }
+
+            return operationResult;
         }
     }
 }

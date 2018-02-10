@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ACM.BLTest
 {
     [TestClass]
-    public class CustomerUnitTest
+    public class CustomerTest
     {
         [TestMethod]
         public void CalculatePercentOfGoalStepsTestValid()

@@ -11,7 +11,7 @@
         </member>
         <member name="M:ACM.BL.Customer.CalculatePercentOfGoalSteps(System.String,System.String)">
             <summary>
-            Calculate the percent of the step goal reached
+            Calculate the percent of the step goalStepsCount reached
             </summary>
             <param name="goalSteps"></param>
             <param name="actualSteps"></param>

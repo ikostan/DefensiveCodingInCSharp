@@ -1,6 +1,7 @@
 C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\Core.Common\bin\Debug\ACM.Library.dll
 C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\Core.Common\bin\Debug\ACM.Library.pdb
-C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\Core.Common\obj\Debug\Core.Common.csprojResolveAssemblyReference.cache
 C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\Core.Common\obj\Debug\Core.Common.csproj.CoreCompileInputs.cache
 C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\Core.Common\obj\Debug\ACM.Library.dll
 C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\Core.Common\obj\Debug\ACM.Library.pdb
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\Core.Common\bin\Debug\ACM.Library.dll.CodeAnalysisLog.xml
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\Core.Common\bin\Debug\ACM.Library.dll.lastcodeanalysissucceeded

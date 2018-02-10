@@ -10,6 +10,8 @@ namespace ACM.BL
     /// </summary>
     public class Payment
     {
+        public int PaymentType { get; set; }
+
         public void ProcessPayment(Payment payment)
         {
             //TODO: -- Process the payment --
