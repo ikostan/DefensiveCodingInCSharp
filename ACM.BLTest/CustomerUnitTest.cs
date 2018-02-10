@@ -21,5 +21,35 @@ namespace ACM.BLTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void CalculatePercentOfGoalStepsTestValidAndSame()
+        {
+            //Arrange
+            Customer customer = new Customer();
+            string goalSteps = "5000", actualSteps = "5000";
+            decimal expected = 100M;
+
+            //Act
+            var actual = customer.CalculatePercentOfGoalSteps(goalSteps, actualSteps);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CalculatePercentOfGoalStepsTestValidActualIsZero()
+        {
+            //Arrange
+            Customer customer = new Customer();
+            string goalSteps = "5000", actualSteps = "0";
+            decimal expected = 0M;
+
+            //Act
+            var actual = customer.CalculatePercentOfGoalSteps(goalSteps, actualSteps);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

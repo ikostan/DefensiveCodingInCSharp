@@ -59,7 +59,7 @@ namespace ACM.BL
         {
             if (goalSteps <= 0) { throw new ArgumentException("Goal must be greater than zero", "goalSteps"); }
 
-            return (actualSteps / goalSteps) * 100;
+            return Math.Round((actualSteps / goalSteps) * 100, 2);
         }
     }
 }

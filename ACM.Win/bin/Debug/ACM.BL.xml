@@ -9,6 +9,14 @@
             Manages a single customer.
             </summary>
         </member>
+        <member name="M:ACM.BL.Customer.CalculatePercentOfGoalSteps(System.String,System.String)">
+            <summary>
+            Calculate the percent of the step goal reached
+            </summary>
+            <param name="goalSteps"></param>
+            <param name="actualSteps"></param>
+            <returns></returns>
+        </member>
         <member name="T:ACM.BL.InventoryRepository">
             <summary>
             Manages the data access for inventory.
