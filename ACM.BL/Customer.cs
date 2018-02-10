@@ -29,24 +29,37 @@ namespace ACM.BL
             // request an email address from the user.
         }
 
+        /// <summary>
+        /// Calculate the percent of the step goal reached
+        /// </summary>
+        /// <param name="goalSteps"></param>
+        /// <param name="actualSteps"></param>
+        /// <returns></returns>
         public object CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)
         {
-            decimal result = 0;
             decimal steps = 0;
-            //var goal = Convert.ToDecimal(goalSteps);
-
             decimal goal = 0;
-            decimal.TryParse(goalSteps, out goal);
 
-            decimal.TryParse(actualSteps, out steps);
+            if (string.IsNullOrWhiteSpace(goalSteps)) { throw new ArgumentException("Goal must be entered!", "goalSteps"); }
 
-            if (goal > 0)
-            {
-                //result =  (Convert.ToDecimal(actualSteps) / goal) * 100;
-                result = (steps / goal) * 100;
-            }
+            if (string.IsNullOrWhiteSpace(actualSteps)) { throw new ArgumentException("Actual steps must be entered!", "actualSteps"); }
 
-            return result;   
+            if (!decimal.TryParse(goalSteps, out goal)) { throw new ArgumentException("Goal must be numeric", "goalSteps"); }
+
+            if (!decimal.TryParse(actualSteps, out steps)) { throw new ArgumentException("Actual steps must be numeric", "actualSteps"); }
+
+            if (goal <= 0) { throw new ArgumentException("Goal must be greater than zero", "goalSteps"); }
+
+            //return (steps / goal) * 100;
+
+            return CalculatePercentOfGoalSteps(goal, steps);
+        }
+
+        public object CalculatePercentOfGoalSteps(decimal goalSteps, decimal actualSteps)
+        {
+            if (goalSteps <= 0) { throw new ArgumentException("Goal must be greater than zero", "goalSteps"); }
+
+            return (actualSteps / goalSteps) * 100;
         }
     }
 }
