@@ -2,6 +2,7 @@
 using ACM.BL;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+
 namespace ACM.BLTest
 {
     [TestClass]
@@ -50,6 +51,21 @@ namespace ACM.BLTest
 
             //Assert
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void CalculatePercentOfGoalStepsTestGoalIsNull()
+        {
+            // Arrange
+            Customer customer = new Customer();
+            string goalSteps = null, actualSteps = "2000";
+
+            // Act
+            var actual = customer.CalculatePercentOfGoalSteps(goalSteps, actualSteps);
+
+            // Assert
+            // Done automaticaly by ExpectedException attribute
         }
     }
 }
