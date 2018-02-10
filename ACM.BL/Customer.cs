@@ -29,9 +29,24 @@ namespace ACM.BL
             // request an email address from the user.
         }
 
-        public object CalculatePercentOfGoalSteps(string goal, string actual)
+        public object CalculatePercentOfGoalSteps(string goalSteps, string actualSteps)
         {
-            return (Convert.ToDecimal(actual) / Convert.ToDecimal(goal)) * 100;
+            decimal result = 0;
+            decimal steps = 0;
+            //var goal = Convert.ToDecimal(goalSteps);
+
+            decimal goal = 0;
+            decimal.TryParse(goalSteps, out goal);
+
+            decimal.TryParse(actualSteps, out steps);
+
+            if (goal > 0)
+            {
+                //result =  (Convert.ToDecimal(actualSteps) / goal) * 100;
+                result = (steps / goal) * 100;
+            }
+
+            return result;   
         }
     }
 }

@@ -80,9 +80,10 @@
             // 
             // labelResult
             // 
-            this.labelResult.Location = new System.Drawing.Point(117, 115);
+            this.labelResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResult.Location = new System.Drawing.Point(27, 115);
             this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(265, 23);
+            this.labelResult.Size = new System.Drawing.Size(454, 29);
             this.labelResult.TabIndex = 5;
             // 
             // PedometerWin

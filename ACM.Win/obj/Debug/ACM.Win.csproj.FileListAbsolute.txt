@@ -13,3 +13,4 @@ C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.Win\obj\Debug\ACM.Win
 C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.Win\obj\Debug\ACM.Win.csproj.CoreCompileInputs.cache
 C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.Win\obj\Debug\ACM.Win.exe
 C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.Win\obj\Debug\ACM.Win.pdb
+C:\Users\superadmin\Desktop\C#\DefensiveCodingInCSharp\ACM.Win\obj\Debug\ACM.Win.PedometerWin.resources
